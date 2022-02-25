@@ -3,7 +3,8 @@
     <v-row class="text-center">
       <v-col class="mb-4">
         <h1 class="main__title display-2 font-weight-bold mb-3">Todo List</h1>
-        <v-text-field label="Todo Input" outlined />
+        <v-text-field label="Todo Input" v-model="todoInput" outlined />
+        <v-btn elevation="2" @click="addTodo">Add Todo</v-btn>
       </v-col>
     </v-row>
   </v-container>
@@ -12,6 +13,16 @@
 <script>
 export default {
   name: "HelloWorld",
+  data() {
+    return {
+      todoInput: "",
+    };
+  },
+  methods: {
+    addTodo() {
+      console.log(this.todoInput);
+    },
+  },
 };
 </script>
 
